@@ -1,0 +1,9 @@
+{
+    "Username" : "PISHOCK-USERNAME", 
+    "Apikey": "PISHOCK-APIKEY", 
+    "Code" : "PISHOCK-CODE", 
+    "Name:" : "LoL-PiShock", 
+    "Op" : "0",
+    "Duration" : "1",
+    "Intensity" : "20"
+}

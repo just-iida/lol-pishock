@@ -1,10 +1,6 @@
 name: Package Application with Pyinstaller
 
-on:
-  push:
-    branches: [ test ]
-  pull_request:
-    branches: [ test ]
+on: workflow_dispatch
 
 jobs:
   build:

@@ -66,7 +66,13 @@ else:
 duration = shock["Duration"]
 intensity = shock["Intensity"]
 print(f'{bcolors.BOLD}{bcolors.HEADER}Current values for shocking:{bcolors.ENDC}', f'\n{bcolors.OKCYAN}Operation:{bcolors.ENDC}', operation, f'\n{bcolors.OKCYAN}Duration:{bcolors.ENDC}', duration, f'{bcolors.OKCYAN}\nIntensity:{bcolors.ENDC}', intensity + f'{bcolors.ENDC}')
-
+print(f'{bcolors.BOLD}{bcolors.OKGREEN}Running a BEEP test on the PiShock connection.{bcolors.ENDC}')
+try:
+    testshock = shock
+    testshock["Op"] = "2"
+    requests.post('https://do.pishock.com/api/apioperate/', json = testshock)
+except:
+    print(f'{bcolors.BOLD}{bcolors.FAIL}Error: {Exception}{bcolors.ENDC}')
 running = True
 while running:
 
@@ -80,9 +86,8 @@ while running:
         try:
             API_playername = requests.get('https://127.0.0.1:2999/liveclientdata/activeplayername', verify=False)
             playername = API_playername.text
-            summonername = json.loads(playername) [::-1]
             global victim
-            victim = summonername.split("#")[1] [::-1]
+            victim = json.loads(playername)
             if game == 0:
                 print(f"{bcolors.BOLD}{bcolors.OKBLUE}Game found, current player is:", victim + f'{bcolors.ENDC}')
                 game = 1
@@ -95,6 +100,7 @@ while running:
         print(f"\n{bcolors.OKGREEN}Checking for game...{bcolors.ENDC}\n")
         check_process_running()
         time.sleep(5)
+    
 
     # while game is running, check for deaths and shock on death according to the config
     while bool(game):

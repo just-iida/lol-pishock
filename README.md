@@ -1,3 +1,5 @@
+# LoL-PiShock has been succeeded by [LoL-PyShock](https://github.com/just-iida/lol-pyshock)
+It does not yet support SerialAPI which was generously contributed to this project by [DHartung23](https://github.com/DHartung23) during the development of LoL-PyShock, but I will be adding it relatively soon thanks to this contributon. LoL-PiShock will be archived.
 # ⚡ LoL-PiShock
 LoL-PiShock currently serves one function: shocking you when you die in League of Legends.
 <br> Yes I missed the opportunity to call it LoL-PyShock, and yes I'll instead write about it here instead of renaming, no I'm not renaming it.

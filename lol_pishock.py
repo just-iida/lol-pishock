@@ -82,7 +82,7 @@ def find_pishock_port():
     """find port for Thingy"""
     ports = serial.tools.list_ports.comports()
     for port in ports:
-        print(f"Gefundener Port: {port.device} - {port.description}")
+        print(f"Found Port: {port.device} - {port.description}")
         if "USB" in port.description or "Serial" in port.description:
             return port.device
     return None
